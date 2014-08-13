@@ -35,8 +35,9 @@ means_sd <- function(x){
 }
 sapply(1:561,means_sd)
 Output1 <- data.frame(Measurement,Mean,SD)
+write.table(Output1,"output1.txt",sep=" ",row.name=FALSE)
 rm(Mean);rm(Measurement);rm(SD)
-print(Output1)
+
 actmatrix <- matrix(nrow=561,ncol=6)
 actfun <- function(x){
   a <- tapply(combined[,x],combined$activity,mean)
@@ -60,3 +61,4 @@ q5 <- data.frame(tmatrix)
 q5 <- cbind(var2,q5)
 names(q5) <- c("Measure", "Laying", "Sitting","Standing","Walking","Walking_Downstairs","Walking_Upstairs","Subject1","Subject2","Subject3","Subject4","Subject5","Subject6","Subject7","Subject8","Subject9","Subject10","Subject11","Subject12","Subject13","Subject14","Subject15","Subject16","Subject17","Subject18","Subject19","Subject20","Subject21","Subject22","Subject23","Subject24","Subject25","Subject26","Subject27","Subject28","Subject29","Subject30")
 write.table(q5,"measures.txt",sep=" ",row.name=FALSE)
+print(Output1)
