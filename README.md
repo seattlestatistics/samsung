@@ -1,2 +1,1 @@
-samsung
-=======
+df;ldfkdfdfdfldsk;
