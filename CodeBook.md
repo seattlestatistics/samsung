@@ -22,7 +22,19 @@ Examples of these measurements included:
  
  *tGravityAcc-arCoeff()-Y,3*
 
-Some of the variable names were transformed.  In the raw data, the activities and the names of the measurements were in files separate from the data, so it was necessary to merge the data, and for measurements to append the variable names.  The activity names were converted from a numerical to a text format.
+Some of the variable names were transformed.  In the raw data, the activities and the names of the measurements were in files separate from the data, so it was necessary to merge the data, and for measurements to append the variable names. The activity names were converted from a numerical to a text format.
+
+The script used in the present project included an output of the means and standard deviations of each of the 561 measures.  Results for the first six measures are as follows:
+
+```
+        Measurement        Mean         SD
+1 tBodyAcc-mean()-X  0.27434726 0.06762780
+2 tBodyAcc-mean()-Y -0.01774349 0.03712817
+3 tBodyAcc-mean()-Z -0.10892503 0.05303309
+4  tBodyAcc-std()-X -0.60778382 0.43869383
+5  tBodyAcc-std()-Y -0.51019138 0.50023977
+6  tBodyAcc-std()-Z -0.61306430 0.40365658
+```
 
 A new data set was created, which had the means for each subject and each activity, for each measurement.  In the first column, *Measure*, the 561 names of the measurements were listed - see above, for examples.  There were 36 additional columns.  These were the six acivities, and the 30 subjects, in the format *Subject1* through to *Subject30*.  
 
