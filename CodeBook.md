@@ -12,10 +12,14 @@ Each observation, aside from being categorized according to activity and subject
 
 Examples of these measurements included:
 
- *tGravityAcc-arCoeff()-X,3* 
+ *tGravityAcc-arCoeff()-X,3*
+ 
  *tGravityAcc-arCoeff()-X,4* 
+ 
  *tGravityAcc-arCoeff()-Y,1*
+ 
  *tGravityAcc-arCoeff()-Y,2*
+ 
  *tGravityAcc-arCoeff()-Y,3*
 
 Some of the variable names were transformed.  In the raw data, the activities and the names of the measurements were in files separate from the data, so it was necessary to merge the data, and for measurements to append the variable names.  The activity names were converted from a numerical to a text format.
