@@ -10,6 +10,6 @@ The resulting data frame is saved onto disk, and outputted onto the screen via p
 
 Finally, a data frame is created which gives the means of each measure, for each activity and each subject.  
 
-To do this, two matrixes are created, on for the activities, the other for the subjects.  They are the combined, and converted into a data frame.  
+To do this, two matrices are created, one for the activities, the other for the subjects.  They are then combined, and converted into a data frame.  
 
-The measure names, and the column names are added.  The final data frame is saved to disk, as a text file.
+The measure names, and the column names, are added.  The final data frame is saved to disk, as a text file.
