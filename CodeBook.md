@@ -34,7 +34,7 @@ The script used in the present project included an output of the means and stand
 6  tBodyAcc-std()-Z -0.61306430 0.40365658
 ```
 
-A new data set was created, which had the means for each subject and each activity, for each measurement.  In the first column, *Measure*, the 561 names of the measurements were listed - see above, for examples.  There were 36 additional columns.  These were the six acivities, and the 30 subjects, in the format *Subject1* through to *Subject30*.  The first two rows of this data set are as follows:
+A new data set was created, which had the means for each subject and each activity, for each measurement.  In the first column, *Measure*, the 561 names of the measurements were listed.  There were 36 additional columns.  These were the six acivities, and the 30 subjects, in the format *Subject1* through to *Subject30*.  The first two rows of this data set are as follows:
 
 ```
             Measure      Laying     Sitting    Standing     Walking Walking_Downstairs Walking_Upstairs    Subject1
