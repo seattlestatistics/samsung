@@ -12,17 +12,17 @@ The first six rows are as follows:
 
         Measurement        Mean         SD
         
-1 tBodyAcc-mean()-X  0.27434726 0.06762780
+1 tBodyAcc-mean()-X   0.27434726  0.06762780
 
-2 tBodyAcc-mean()-Y -0.01774349 0.03712817
+2 tBodyAcc-mean()-Y  -0.01774349  0.03712817
 
-3 tBodyAcc-mean()-Z -0.10892503 0.05303309
+3 tBodyAcc-mean()-Z  -0.10892503  0.05303309
 
-4  tBodyAcc-std()-X -0.60778382 0.43869383
+4  tBodyAcc-std()-X  -0.60778382  0.43869383
 
-5  tBodyAcc-std()-Y -0.51019138 0.50023977
+5  tBodyAcc-std()-Y  -0.51019138  0.50023977
 
-6  tBodyAcc-std()-Z -0.61306430 0.40365658
+6  tBodyAcc-std()-Z  -0.61306430  0.40365658
 
 Finally, a data frame is created which gives the means of each measure, for each activity and each subject.  
 
