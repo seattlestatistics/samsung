@@ -1,42 +1,11 @@
-How the  run_analysis.R script works
+*How the  run_analysis.R script works*
 
 There is a single script,  run_analysis.R, which performs several talks.
 
 Firstly, it reads the files containing the training and test data, for the the Samsung project.  It also reads indexes of the 30 subjects and 6 activities, as well as the names of the 561 different measurements - which are the variables.  It recodes the numerical names of activities, into text names.  It then creates a combined data set, with each row of the 561 variable columns categorized according to activity and subject.
 
+This combined data set is used to create a data frame which lists all 561 measures, with their means and standard deviations.  This is done by cycling through the 561 variables, using a function and a sapply() call:
 
-
-
-
-
-
-train <- read.table("x_train.txt",sep="",header=FALSE)
-test <- read.table("x_test.txt",sep="",header=FALSE)
-subjtest <- read.table("subject_test.txt",sep="",header=FALSE)
-subjtrain <- read.table("subject_train.txt",sep="",header=FALSE)
-acttrain <- read.table("y_train.txt",sep="",header=FALSE)
-acttest <- read.table("y_test.txt",sep="",header=FALSE)
-variables <- read.table("features.txt",sep="",header=FALSE)
-variables <- variables[,2]
-var2 <- variables
-variables <- as.character(variables)
-variables <- c(variables,"subject","activity")
-acttrain <- acttrain[,1]
-acttest <- acttest[,1]
-subjtest <- subjtest[,1]
-subjtrain <- subjtrain[,1]
-train$subject <- subjtrain
-test$subject <- subjtest
-train$activity <- acttrain
-test$activity <- acttest
-combined <- rbind(train,test)
-combined$activity <- gsub(1,"Walking",combined$activity)
-combined$activity <- gsub(2,"Walking Upstairs",combined$activity)
-combined$activity <- gsub(3,"Walking Downstairs",combined$activity)
-combined$activity <- gsub(4,"Sitting",combined$activity)
-combined$activity <- gsub(5,"Standing",combined$activity)
-combined$activity <- gsub(6,"Laying",combined$activity)
-names(combined) <- variables
 Mean <- vector()
 SD <- vector()
 Measurement <- vector()
@@ -46,9 +15,14 @@ means_sd <- function(x){
   SD[x] <<- sd(combined[,x])
 }
 sapply(1:561,means_sd)
-Output1 <- data.frame(Measurement,Mean,SD)
-write.table(Output1,"output1.txt",sep=" ",row.name=FALSE)
-rm(Mean);rm(Measurement);rm(SD)
+
+The resulting data frame is saved onto disk, and outputted onto the screen via print().
+
+Finally, a data frame is created which gives the means of each measure, for each activity and each subject.  
+
+To do this, two matrixes are created, on for the activities, the other for the subjects.  They are the combined, and converted into a data frame.  
+
+Here is how the activity matrix is created:
 
 actmatrix <- matrix(nrow=561,ncol=6)
 actfun <- function(x){
@@ -59,18 +33,4 @@ actfun <- function(x){
 }
 sapply(1:561,actfun)
 
-
-subjmatrix <- matrix(nrow=561,ncol=30)
-subjfun <- function(x){
-  a <- tapply(combined[,x],combined$subject,mean)
-  for(i in 1:30){
-    subjmatrix[x,i] <<- a[i]
-  }
-}
-sapply(1:561,subjfun)
-tmatrix <- cbind(actmatrix,subjmatrix)
-q5 <- data.frame(tmatrix)
-q5 <- cbind(var2,q5)
-names(q5) <- c("Measure", "Laying", "Sitting","Standing","Walking","Walking_Downstairs","Walking_Upstairs","Subject1","Subject2","Subject3","Subject4","Subject5","Subject6","Subject7","Subject8","Subject9","Subject10","Subject11","Subject12","Subject13","Subject14","Subject15","Subject16","Subject17","Subject18","Subject19","Subject20","Subject21","Subject22","Subject23","Subject24","Subject25","Subject26","Subject27","Subject28","Subject29","Subject30")
-write.table(q5,"measures.txt",sep=" ",row.name=FALSE)
-print(Output1)
+The measure names, and the column names are added.  The final data frame is saved to disk, as a text file.
