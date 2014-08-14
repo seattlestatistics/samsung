@@ -37,7 +37,6 @@ The script used in the present project included an output of the means and stand
 A new data set was created, which had the means for each subject and each activity, for each measurement.  In the first column, *Measure*, the 561 names of the measurements were listed - see above, for examples.  There were 36 additional columns.  These were the six acivities, and the 30 subjects, in the format *Subject1* through to *Subject30*.  The first two rows of this data set are as follows:
 
 ```
-> head(measures,2)
             Measure      Laying     Sitting    Standing     Walking Walking_Downstairs Walking_Upstairs    Subject1
 1 tBodyAcc-mean()-X  0.26864864  0.27305961  0.27915349  0.27633688         0.28813723       0.26229465  0.26569692
 2 tBodyAcc-mean()-Y -0.01831773 -0.01268957 -0.01615189 -0.01790683        -0.01631193      -0.02592329 -0.01829817
@@ -53,7 +52,6 @@ A new data set was created, which had the means for each subject and each activi
     Subject29   Subject30
 1  0.27911152  0.27630584
 2 -0.01847195 -0.01758561
-> 
 
 ```
 
